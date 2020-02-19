@@ -5,18 +5,14 @@ function mostrar()
 	var positivo = 0;
 	var negativo = 1;
 	
-	var respuesta='si';
-
-	while(respuesta != "no") {
+	while(confirm("Desea ingresar un número?")) {
 		contador = parseInt(prompt("Ingresá un número: "));
 
-		if(contador > 0) {
+		if(contador >= 0) {
 			positivo += contador;
 		} else {
 			negativo *= contador;
 		}
-
-		respuesta = prompt("Desea continuar? si/no");
 	}
 
 document.getElementById('suma').value = positivo;

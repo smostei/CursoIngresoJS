@@ -5,26 +5,28 @@ function mostrar()
 	var max = 0;
 	var min = 0;
 	// declarar variables
-	
-	var respuesta = 'si';
 
 	contador = parseInt(prompt("Ingresa un número: "));	
+	
+	if(isNaN(contador)) {
+		return;
+	}
 
 	max = contador;
 	min = contador;
-
-	respuesta = prompt("Desea continuar? si/no");
 	
-	while(respuesta != 'no') {
+	while(confirm("Desea agregar un número?")) {
 		contador = parseInt(prompt("Ingresa un número: "));
+
+		if(isNaN(contador)) {
+			return;
+		}		
 
 		if(contador > max) {
 			max = contador;
 		} else {
 			min = contador;
 		}
-
-		respuesta = prompt("Desea continuar? si/no");
 	}
 
 	document.getElementById("maximo").value = max;
